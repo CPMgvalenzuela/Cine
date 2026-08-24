@@ -4,18 +4,17 @@ body {
 }
 .tabla {
     border-collapse: separate;
-    border-spacing: 10px; 
+    border-spacing: 10px;
     background-color: rgb(247, 217, 178);
 }
- th, td {
-      border: 1px solid black;   
-      padding: 20px;             
-      width: 25px;              
-      height: 25px;
-      text-align: center;
-      vertical-align: middle;
-    }
-
+th, td {
+    border: 1px solid black;
+    padding: 20px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+}
 .nav{
     height: 150px;
     padding-top: 100px;
@@ -23,7 +22,6 @@ body {
     font-size: x-large;
     background-color: brown;
     color: beige;
-
 }
 .t {
     width: 150px;
@@ -35,29 +33,57 @@ body {
 .a {
     font-weight: bold;
     font-size: x-large;
-    color: rgb(0, 0, 0);
-    text-decoration: underline;
     color: rgb(27, 25, 0);
+    text-decoration: underline;
 }
-.pala {
-    width: 250px;
-}
- header {
+.pala { width: 250px; }
+header {
     background-color: #991313;
     color: white;
     padding: 20px 0;
     text-align: center;
-  }
+}
 .contenedor {
     padding-top: 125px;
     padding-right: 30px;
-    display: flex ; /*activa flexbox */
-    justify-content: center; /*alinea horizontalmente */
-    align-items: center; /*alinea verticalmente */
-    height: 100px; /*para ver el efecto vertical */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }
 .item {
     background-color: rgb(240, 171, 92);
     padding: 20px;
     margin: 10px;
+}
+
+/* Responsive: iPad Mini 2, tablets y móviles */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+
+.nav, .t { width: 100%; max-width: 100%; padding-left: 20px; padding-right: 20px; }
+.nav { height: auto; min-height: 110px; padding-top: 30px; }
+.t { height: auto; min-height: 120px; }
+.contenedor { height: auto; padding: 25px 15px; flex-wrap: wrap; gap: 12px; }
+.item { max-width: 100%; }
+.tabla { width: 100%; max-width: 100%; overflow-x: auto; border-spacing: 4px; }
+table { width: 100%; max-width: 100%; }
+th, td { padding: 12px 8px; width: auto; height: auto; }
+.pala { width: min(100%, 250px); }
+
+@media (max-width: 1024px) {
+    .contenedor { justify-content: center; }
+    .item { flex: 1 1 280px; }
+    .nav { padding-left: 20px; padding-right: 20px; }
+    .t { padding-left: 20px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+}
+
+@media (max-width: 700px) {
+    .nav { padding: 20px 12px; font-size: 1.1rem; }
+    .contenedor { padding: 15px 8px; flex-direction: column; }
+    .item { width: min(94vw, 420px); margin: 6px auto; padding: 12px; }
+    .tabla { display: block; overflow-x: auto; white-space: normal; }
+    th, td { padding: 8px 6px; font-size: .9rem; }
 }
